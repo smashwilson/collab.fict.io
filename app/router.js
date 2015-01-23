@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource("stories", function() {});
+  this.resource("snippets", function() {});
 });
 
 export default Router;
