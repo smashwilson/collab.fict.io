@@ -3,13 +3,22 @@ import {
   test
 } from 'ember-qunit';
 
+import Ember from 'ember';
+
 moduleFor('controller:index', 'IndexController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  // needs: ['model:story']
 });
 
-// Replace this with your real tests.
-test('it exists', function() {
+test('list incomplete stories', function() {
   var controller = this.subject();
-  ok(controller);
+
+  controller.set('model', [
+    Ember.Object.create({title: 'one', complete: true}),
+    Ember.Object.create({title: 'two', complete: false})
+  ]);
+
+  var incomplete = controller.get('incompleteStories');
+
+  equal(incomplete, [{title: 'two', complete: false}]);
 });
