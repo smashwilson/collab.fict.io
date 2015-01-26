@@ -13,12 +13,13 @@ moduleFor('controller:index', 'IndexController', {
 test('list incomplete stories', function() {
   var controller = this.subject();
 
-  controller.set('model', [
-    Ember.Object.create({title: 'one', complete: true}),
-    Ember.Object.create({title: 'two', complete: false})
-  ]);
+  var
+    one = Ember.Object.create({title: 'one', complete: true}),
+    two = Ember.Object.create({title: 'two', complete: false});
+
+  controller.set('model', [one, two]);
 
   var incomplete = controller.get('incompleteStories');
-
-  equal(incomplete, [{title: 'two', complete: false}]);
+  strictEqual(incomplete.length, 1)
+  strictEqual(incomplete[0].get('title'), 'two');
 });
