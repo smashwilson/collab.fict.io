@@ -8,12 +8,31 @@
 </p>
 
 <div class="controls pull-right">
-  {{#if model.canContribute }}
+  {{#if canWrite}}
     <a href="#" class="text-success"><i class="fa fa-pencil"></i> write</a>
-  {{else}}
-    <span class="text-warning">
+  {{/if}}
+
+  {{#if isLockedByYou}}
+    <a href="#" class="text-success"><i class="fa fa-key"></i> continue writing</a>
+  {{/if}}
+
+  {{#if isLockedByOther}}
+    <span href="#" class="text-info">
+      <i class="fa fa-lock"></i> shh, {{ lockOwner }} is writing
+    </span>
+  {{/if}}
+
+  {{#if justWrote}}
+    <span class="text-info">
       <i class="fa fa-ellipsis-h"></i> give someone else a chance
     <span>
   {{/if}}
+
+  {{#if badStatus}}
+    <span class="text-danger">
+      <i class="fa fa-excalamation-triangle"></i> bad status: <code>{{ badStatus }}</code>
+    </span>
+  {{/if}}
+
   <a href="#" class="text-success"><i class="fa fa-wrench"></i> admin</a>
 </div>

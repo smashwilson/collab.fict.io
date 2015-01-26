@@ -34,7 +34,7 @@ module.exports = function(app) {
           'firstLine': 'Draft Someone Else Locked',
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
-          'contributionStatus': 'locked:two@gmail.com',
+          'contributionStatus': 'locked:Another User',
           'snippetCount': 3,
         },
         {
