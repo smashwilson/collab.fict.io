@@ -20,6 +20,6 @@ test('list incomplete stories', function() {
   controller.set('model', [one, two]);
 
   var incomplete = controller.get('incompleteStories');
-  strictEqual(incomplete.length, 1)
+  strictEqual(incomplete.length, 1);
   strictEqual(incomplete[0].get('title'), 'two');
 });
