@@ -4,7 +4,7 @@
   <span class="snippet-count">
     {{ model.snippetCount }}
   </span>
-  {{ pluralContribution }}
+  {{ pluralContribution }}{{#if message}}. <span class="text-muted">{{message}}</span>{{/if}}
 </p>
 
 <ul class="list-inline pull-right">
