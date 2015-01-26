@@ -1,5 +1,7 @@
 # Collaborative
 
+[![Build Status](https://travis-ci.org/smashwilson/collab.fict.io.svg?branch=master)](https://travis-ci.org/smashwilson/collab.fict.io?branch=master)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
