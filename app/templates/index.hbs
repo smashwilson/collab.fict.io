@@ -1,1 +1,29 @@
-<h1>Sup</h1>
+<h1>The Library</h1>
+
+<div class="clearfix">
+  <button class="btn btn-primary pull-right">
+    Start a New Story
+  </button>
+</div>
+
+<div class="list-group">
+{{#each story in incompleteStories}}
+  <a href="#" class="list-group-item"></a>
+{{else}}
+  <div class="list-group-item disabled">
+    <h4>No stories in progress.</h4>
+    <p>Ask a friend to add you to one, or <a href="#">start your own.</a></p>
+  </div>
+{{/each}}
+</div>
+
+<div class="list-group">
+{{#each story in completeStories}}
+  <a href="#" class="list-group-item"></a>
+{{else}}
+  <div class="list-group-item disabled">
+    <h4>No completed stories.</h4>
+    <p>Get writing, people!</p>
+  </div>
+{{/each}}
+</div>
