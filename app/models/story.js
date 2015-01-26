@@ -4,6 +4,5 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   creatorEmail: DS.attr('string'),
   createdAt: DS.attr('date'),
-  complete: DS.attr('boolean'),
   snippets: DS.hasMany('snippet')
 });

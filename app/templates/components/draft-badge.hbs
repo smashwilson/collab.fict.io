@@ -1,0 +1,46 @@
+<h4><i class="fa fa-quote-left"></i> {{ model.firstLine }}</h4>
+
+<p class="snippet-progress">
+  <span class="snippet-count">
+    {{ model.snippetCount }}
+  </span>
+  {{ pluralContribution }}
+</p>
+
+<ul class="list-inline pull-right">
+  {{#if canWrite}}
+    <li>
+      <a href="#" class="text-success"><i class="fa fa-pencil"></i> write</a>
+    </li>
+  {{/if}}
+
+  {{#if isLockedByYou}}
+    <li>
+      <a href="#" class="text-success"><i class="fa fa-key"></i> continue writing</a>
+    </li>
+  {{/if}}
+
+  {{#if isLockedByOther}}
+    <li class="text-info">
+      <i class="fa fa-lock"></i> shh, {{ lockOwner }} is writing
+    </li>
+  {{/if}}
+
+  {{#if justWrote}}
+    <li class="text-warning">
+      <i class="fa fa-ellipsis-h"></i> give someone else a chance
+    <li>
+  {{/if}}
+
+  {{#if badStatus}}
+    <li class="text-danger">
+      <i class="fa fa-excalamation-triangle"></i> bad status: <code>{{ badStatus }}</code>
+    </li>
+  {{/if}}
+
+  {{#if model.canAdmin}}
+    <li class="text-info">
+      <a href="#"><i class="fa fa-wrench"></i> admin</a>
+    </li>
+  {{/if}}
+</div>
