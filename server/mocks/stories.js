@@ -4,7 +4,32 @@ module.exports = function(app) {
 
   storiesRouter.get('/', function(req, res) {
     res.send({
-      'stories': []
+      'stories': [
+        {
+          'id': 1,
+          'title': 'Story One',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'complete': false,
+          'snippets': [],
+        },
+        {
+          'id': 2,
+          'title': 'Story Two',
+          'creatorEmail': 'two@gmail.com',
+          'createdAt': '2015-01-01T15:00:00',
+          'complete': true,
+          'snippets': [],
+        },
+        {
+          'id': 3,
+          'title': 'Story Three',
+          'creatorEmail': 'three@gmail.com',
+          'createdAt': '2014-12-20T09:00:00',
+          'complete': true,
+          'snippets': [],
+        },
+      ]
     });
   });
 
@@ -32,5 +57,5 @@ module.exports = function(app) {
     res.status(204).end();
   });
 
-  app.use('/api/stories', storiesRouter);
+  app.use('/api/v1/stories', storiesRouter);
 };
