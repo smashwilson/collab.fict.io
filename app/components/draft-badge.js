@@ -45,6 +45,22 @@ export default Ember.Component.extend({
     }
   }.property('model.contributionStatus'),
 
+  message: function() {
+    if (this.get('isLockedByYou')) {
+      return 'Please finish your contribution once you start it, so others have a chance to write!';
+    }
+
+    if (this.get('isLockedByOther')) {
+      return "You'll have to wait your turn!";
+    }
+
+    if (this.get('justWrote')) {
+      return 'You can write again once someone else has contributed.';
+    }
+
+    return null;
+  }.property('model.contributionStatus'),
+
   pluralContribution: function() {
     if (this.get('model.snippetCount') === 1) {
       return "contribution";

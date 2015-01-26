@@ -50,6 +50,9 @@ test('it detects when you have the lock', function () {
   strictEqual(component.get('isLockedByOther'), false);
   strictEqual(component.get('justWrote'), false);
   strictEqual(component.get('badStatus'), null);
+
+  var message = component.get('message');
+  strictEqual(message, 'Please finish your contribution once you start it, so others have a chance to write!');
 });
 
 test('it detects when someone else has locked the draft', function () {
@@ -64,6 +67,9 @@ test('it detects when someone else has locked the draft', function () {
   strictEqual(component.get('badStatus'), null);
 
   strictEqual(component.get('lockOwner'), 'other@gmail.com');
+
+  var message = component.get('message');
+  strictEqual(message, "You'll have to wait your turn!");
 });
 
 test('it detects when you just wrote', function () {
@@ -76,6 +82,9 @@ test('it detects when you just wrote', function () {
   strictEqual(component.get('isLockedByOther'), false);
   ok(component.get('justWrote'));
   strictEqual(component.get('badStatus'), null);
+
+  var message = component.get('message');
+  strictEqual(message, 'You can write again once someone else has contributed.');
 });
 
 test('it detects a bad status', function () {
