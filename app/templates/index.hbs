@@ -6,6 +6,8 @@
   </button>
 </div>
 
+<h3>In progress</h3>
+
 <div class="list-group">
 {{#each story in incompleteStories}}
   {{story-badge model=story}}
@@ -16,6 +18,8 @@
   </div>
 {{/each}}
 </div>
+
+<h3>Complete</h3>
 
 <div class="list-group">
 {{#each story in completeStories}}
