@@ -8,7 +8,7 @@
 
 <div class="list-group">
 {{#each story in incompleteStories}}
-  <a href="#" class="list-group-item"></a>
+  {{story-badge model=story}}
 {{else}}
   <div class="list-group-item disabled">
     <h4>No stories in progress.</h4>
@@ -19,7 +19,7 @@
 
 <div class="list-group">
 {{#each story in completeStories}}
-  <a href="#" class="list-group-item"></a>
+  {{story-badge model=story}}
 {{else}}
   <div class="list-group-item disabled">
     <h4>No completed stories.</h4>
