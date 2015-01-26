@@ -31,6 +31,20 @@ export default Ember.Component.extend({
     return this.get('model.contributionStatus').slice(LOCK_PREFIXLEN);
   }.property('model.contributionStatus'),
 
+  badStatus: function() {
+    var
+      self = this,
+      validStatus = [
+      'canWrite', 'isLockedByYou', 'isLockedByOther', 'justWrote'
+    ].any(function (check) { return self.get(check); });
+
+    if (!validStatus) {
+      return this.get('model.contributionStatus');
+    } else {
+      return null;
+    }
+  }.property('model.contributionStatus'),
+
   pluralContribution: function() {
     if (this.get('model.snippetCount') === 1) {
       return "contribution";

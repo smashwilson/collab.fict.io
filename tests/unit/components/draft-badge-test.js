@@ -37,6 +37,7 @@ test('it detects when you can write', function () {
   strictEqual(component.get('isLockedByYou'), false);
   strictEqual(component.get('isLockedByOther'), false);
   strictEqual(component.get('justWrote'), false);
+  strictEqual(component.get('badStatus'), null);
 });
 
 test('it detects when you have the lock', function () {
@@ -48,6 +49,7 @@ test('it detects when you have the lock', function () {
   ok(component.get('isLockedByYou'));
   strictEqual(component.get('isLockedByOther'), false);
   strictEqual(component.get('justWrote'), false);
+  strictEqual(component.get('badStatus'), null);
 });
 
 test('it detects when someone else has locked the draft', function () {
@@ -59,6 +61,7 @@ test('it detects when someone else has locked the draft', function () {
   strictEqual(component.get('isLockedByYou'), false);
   ok(component.get('isLockedByOther'));
   strictEqual(component.get('justWrote'), false);
+  strictEqual(component.get('badStatus'), null);
 
   strictEqual(component.get('lockOwner'), 'other@gmail.com');
 });
@@ -72,4 +75,18 @@ test('it detects when you just wrote', function () {
   strictEqual(component.get('isLockedByYou'), false);
   strictEqual(component.get('isLockedByOther'), false);
   ok(component.get('justWrote'));
+  strictEqual(component.get('badStatus'), null);
+});
+
+test('it detects a bad status', function () {
+  var component = this.subject();
+
+  component.set('model', Ember.Object.create({contributionStatus: 'wat'}));
+
+  strictEqual(component.get('canWrite'), false);
+  strictEqual(component.get('isLockedByYou'), false);
+  strictEqual(component.get('isLockedByOther'), false);
+  strictEqual(component.get('justWrote'), false);
+
+  strictEqual(component.get('badStatus'), 'wat');
 });
