@@ -7,5 +7,6 @@ export default DS.Model.extend({
   contributionStatus: DS.attr('string'),
   canAdmin: DS.attr('boolean'),
   snippetCount: DS.attr('number'),
+  nextContribution: DS.attr('number'),
   lastSnippet: DS.belongsTo('snippet'),
 });
