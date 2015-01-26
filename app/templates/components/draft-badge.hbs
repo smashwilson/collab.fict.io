@@ -7,32 +7,40 @@
   {{ pluralContribution }}
 </p>
 
-<div class="controls pull-right">
+<ul class="list-inline pull-right">
   {{#if canWrite}}
-    <a href="#" class="text-success"><i class="fa fa-pencil"></i> write</a>
+    <li>
+      <a href="#" class="text-success"><i class="fa fa-pencil"></i> write</a>
+    </li>
   {{/if}}
 
   {{#if isLockedByYou}}
-    <a href="#" class="text-success"><i class="fa fa-key"></i> continue writing</a>
+    <li>
+      <a href="#" class="text-success"><i class="fa fa-key"></i> continue writing</a>
+    </li>
   {{/if}}
 
   {{#if isLockedByOther}}
-    <span href="#" class="text-info">
+    <li class="text-info">
       <i class="fa fa-lock"></i> shh, {{ lockOwner }} is writing
-    </span>
+    </li>
   {{/if}}
 
   {{#if justWrote}}
-    <span class="text-info">
+    <li class="text-warning">
       <i class="fa fa-ellipsis-h"></i> give someone else a chance
-    <span>
+    <li>
   {{/if}}
 
   {{#if badStatus}}
-    <span class="text-danger">
+    <li class="text-danger">
       <i class="fa fa-excalamation-triangle"></i> bad status: <code>{{ badStatus }}</code>
-    </span>
+    </li>
   {{/if}}
 
-  <a href="#" class="text-success"><i class="fa fa-wrench"></i> admin</a>
+  {{#if model.canAdmin}}
+    <li class="text-info">
+      <a href="#"><i class="fa fa-wrench"></i> admin</a>
+    </li>
+  {{/if}}
 </div>

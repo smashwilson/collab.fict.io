@@ -11,6 +11,7 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'available',
+          'canAdmin': true,
           'snippetCount': 1,
         },
         {
@@ -19,6 +20,7 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'cooldown',
+          'canAdmin': true,
           'snippetCount': 4,
         },
         {
@@ -27,6 +29,7 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'lockOwned',
+          'canAdmin': false,
           'snippetCount': 9,
         },
         {
@@ -35,6 +38,7 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'locked:Another User',
+          'canAdmin': false,
           'snippetCount': 3,
         },
         {
@@ -43,6 +47,7 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'wtf',
+          'canAdmin': false,
           'snippetCount': 15,
         },
       ]
