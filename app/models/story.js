@@ -5,5 +5,6 @@ export default DS.Model.extend({
   creatorEmail: DS.attr('string'),
   createdAt: DS.attr('date'),
   complete: DS.attr('boolean'),
+  canContribute: DS.attr('boolean'),
   snippets: DS.hasMany('snippet')
 });

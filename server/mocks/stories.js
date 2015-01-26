@@ -11,6 +11,16 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'complete': false,
+          'canContribute': true,
+          'snippets': [],
+        },
+        {
+          'id': 1,
+          'title': 'Story One',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'complete': false,
+          'canContribute': false,
           'snippets': [],
         },
         {
@@ -19,6 +29,7 @@ module.exports = function(app) {
           'creatorEmail': 'two@gmail.com',
           'createdAt': '2015-01-01T15:00:00',
           'complete': true,
+          'canContribute': false,
           'snippets': [],
         },
         {
@@ -27,6 +38,7 @@ module.exports = function(app) {
           'creatorEmail': 'three@gmail.com',
           'createdAt': '2014-12-20T09:00:00',
           'complete': true,
+          'canContribute': false,
           'snippets': [],
         },
       ]
