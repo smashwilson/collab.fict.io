@@ -10,7 +10,7 @@ module.exports = function(app) {
           'firstLine': 'Open Draft',
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
-          'canContribute': true,
+          'contributionStatus': 'available',
           'snippetCount': 1,
         },
         {
@@ -18,8 +18,32 @@ module.exports = function(app) {
           'firstLine': 'Draft You Just Contributed To',
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
-          'canContribute': false,
+          'contributionStatus': 'cooldown',
           'snippetCount': 4,
+        },
+        {
+          'id': 3,
+          'firstLine': 'Draft You Locked',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'contributionStatus': 'lockOwned',
+          'snippetCount': 9,
+        },
+        {
+          'id': 4,
+          'firstLine': 'Draft Someone Else Locked',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'contributionStatus': 'locked:two@gmail.com',
+          'snippetCount': 3,
+        },
+        {
+          'id': 5,
+          'firstLine': 'Draft with a Bad Status',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'contributionStatus': 'wtf',
+          'snippetCount': 15,
         },
       ]
     });
