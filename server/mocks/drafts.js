@@ -4,13 +4,22 @@ module.exports = function(app) {
 
   storiesRouter.get('/', function(req, res) {
     res.send({
-      'stories': [
+      'drafts': [
         {
-          id: 1,
-          title: 'A Finished Tale',
-          creatorEmail: 'two@gmail.com',
-          createdAt: '2014-11-20T13:30:00',
-          snippets: [],
+          'id': 1,
+          'firstLine': 'Open Draft',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'canContribute': true,
+          'snippetCount': 1,
+        },
+        {
+          'id': 2,
+          'firstLine': 'Draft You Just Contributed To',
+          'creatorEmail': 'one@gmail.com',
+          'createdAt': '2015-01-02T14:00:00',
+          'canContribute': false,
+          'snippetCount': 4,
         },
       ]
     });
@@ -40,5 +49,5 @@ module.exports = function(app) {
     res.status(204).end();
   });
 
-  app.use('/api/v1/stories', storiesRouter);
+  app.use('/api/v1/drafts', storiesRouter);
 };

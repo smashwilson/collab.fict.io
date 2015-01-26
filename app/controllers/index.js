@@ -1,11 +1,4 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  incompleteStories: function() {
-    return this.get('model').filterBy('complete', false);
-  }.property('model'),
-
-  completeStories: function() {
-    return this.get('model').filterBy('complete', true);
-  }.property('model')
+export default Ember.ObjectController.extend({
 });

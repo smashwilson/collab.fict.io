@@ -9,8 +9,8 @@
 <h3>In progress</h3>
 
 <div class="list-group">
-{{#each story in incompleteStories}}
-  {{story-badge model=story}}
+{{#each draft in drafts}}
+  {{draft-badge model=draft}}
 {{else}}
   <div class="list-group-item disabled">
     <h4>No stories in progress.</h4>
@@ -22,7 +22,7 @@
 <h3>Complete</h3>
 
 <div class="list-group">
-{{#each story in completeStories}}
+{{#each story in stories}}
   {{story-badge model=story}}
 {{else}}
   <div class="list-group-item disabled">

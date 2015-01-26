@@ -5,7 +5,7 @@ import {
 
 moduleForModel('snippet', 'Snippet', {
   // Specify the other units that are required for this test.
-  needs: ['model:story']
+  needs: ['model:draft', 'model:story']
 });
 
 test('it exists', function() {

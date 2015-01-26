@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('story', 'Story', {
+moduleForModel('draft', 'Draft', {
   // Specify the other units that are required for this test.
-  needs: ['model:snippet', 'model:draft']
+  needs: ['model:snippet', 'model:story']
 });
 
 test('it exists', function() {

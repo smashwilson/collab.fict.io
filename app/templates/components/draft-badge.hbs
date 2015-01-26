@@ -1,0 +1,19 @@
+<h4><i class="fa fa-quote-left"></i> {{ model.firstLine }}</h4>
+
+<p class="snippet-progress">
+  <span class="snippet-count">
+    {{ model.snippetCount }}
+  </span>
+  {{ pluralContribution }}
+</p>
+
+<div class="controls pull-right">
+  {{#if model.canContribute }}
+    <a href="#" class="text-success"><i class="fa fa-pencil"></i> write</a>
+  {{else}}
+    <span class="text-warning">
+      <i class="fa fa-ellipsis-h"></i> give someone else a chance
+    <span>
+  {{/if}}
+  <a href="#" class="text-success"><i class="fa fa-wrench"></i> admin</a>
+</div>
