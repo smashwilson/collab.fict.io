@@ -1,8 +1,8 @@
 module.exports = function(app) {
   var express = require('express');
-  var storiesRouter = express.Router();
+  var draftRouter = express.Router();
 
-  storiesRouter.get('/', function(req, res) {
+  draftRouter.get('/', function(req, res) {
     res.send({
       'drafts': [
         {
@@ -11,7 +11,6 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'available',
-          'nextContribution': 1,
           'canAdmin': true,
           'snippetCount': 1,
         },
@@ -21,7 +20,6 @@ module.exports = function(app) {
           'creatorEmail': 'one@gmail.com',
           'createdAt': '2015-01-02T14:00:00',
           'contributionStatus': 'cooldown',
-          'nextContribution': 5,
           'canAdmin': true,
           'snippetCount': 4,
         },
@@ -56,29 +54,40 @@ module.exports = function(app) {
     });
   });
 
-  storiesRouter.post('/', function(req, res) {
-    res.status(201).end();
+  draftRouter.post('/', function(req, res) {
+    res.send({
+      'draft': {
+        'id': 6,
+        'firstLine': 'You Just Made This One',
+        'creatorEmail': 'one@gmail.com',
+        'createdAt': '2015-01-02T15:00:00',
+        'contributionStatus': 'cooldown',
+        'canAdmin': true,
+        'snippetCount': 1,
+        'lastSnippet': 1,
+      },
+    });
   });
 
-  storiesRouter.get('/:id', function(req, res) {
+  draftRouter.get('/:id', function(req, res) {
     res.send({
-      'stories': {
+      'drafts': {
         id: req.params.id
       }
     });
   });
 
-  storiesRouter.put('/:id', function(req, res) {
+  draftRouter.put('/:id', function(req, res) {
     res.send({
-      'stories': {
+      'drafts': {
         id: req.params.id
       }
     });
   });
 
-  storiesRouter.delete('/:id', function(req, res) {
+  draftRouter.delete('/:id', function(req, res) {
     res.status(204).end();
   });
 
-  app.use('/api/v1/drafts', storiesRouter);
+  app.use('/api/v1/drafts', draftRouter);
 };

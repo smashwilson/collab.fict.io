@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h1>Start a Story</h1>
+</div>
+
+<form>
+  <div class="form-group">
+    <label for="firstSnippet">Start us off with the first submission.</label>
+    {{textarea value=firstSnippet id="firstSnippet" class="form-control" cols=120 rows=20 autofocus="true"}}
+    <p class="help-block">
+      Write a few paragraphs of the new story to kick things off.
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label for="usernames">Now, choose who should be able to contribute.</label>
+    {{input value=usernames id="usernames" class="form-control"}}
+    <p class="help-block">
+      This should be a list of usernames, separated by spaces. You can always add or remove people
+      in the story's settings view later.
+    </p>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" {{action 'submit'}}>Create the Story</button>
+    {{#link-to 'index' class="btn btn-default"}}Nevermind{{/link-to}}
+  </div>
+</form>
