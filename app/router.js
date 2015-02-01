@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('sessions', function() {
+    this.route('new');
+  });
+
   this.resource('stories', function() {
     this.route('new');
   });
